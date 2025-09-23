@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const LazyImage = ({ src, alt, fallback = '/portfolio/placeholder.svg' }) => {
+const LazyImage = ({ src, alt, fallback = '/portfolio-assets/placeholder.svg' }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);

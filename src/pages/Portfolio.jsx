@@ -16,7 +16,7 @@ function Portfolio() {
       title: "ERK Consulting",
       description: "Professional consulting website with modern design and responsive layout. Built with cutting-edge web technologies for optimal performance and user experience.",
       tags: ["React", "Tailwind CSS", "Responsive", "Professional"],
-      image: "/portfolio/erk-consulting.jpg", // We'll add screenshots
+      image: "/portfolio-assets/erk-consulting.jpg", // We'll add screenshots
       links: {
         demo: "https://erkconsulting.com",
         github: "https://github.com/MagicUnicornInc/erkconsulting.com"
@@ -27,7 +27,7 @@ function Portfolio() {
       title: "Carolina Mobile Tire",
       description: "Mobile tire service website showcasing services, scheduling, and customer testimonials. Clean, professional design optimized for mobile conversions.",
       tags: ["HTML5", "CSS3", "JavaScript", "Mobile-First"],
-      image: "/portfolio/carolina-mobile-tire.jpg",
+      image: "/portfolio-assets/carolina-mobile-tire.jpg",
       links: {
         demo: null, // Not live
         github: "https://github.com/MagicUnicornInc/Carolina-Mobile-Tire"
@@ -37,7 +37,7 @@ function Portfolio() {
       title: "Adorna Design",
       description: "Elegant interior design portfolio with stunning visual galleries and smooth animations. Features a custom Star Theme for enhanced user experience.",
       tags: ["WordPress", "Custom Theme", "E-commerce", "Design"],
-      image: "/portfolio/adorna-design.jpg",
+      image: "/portfolio-assets/adorna-design.jpg",
       links: {
         demo: "https://adornadesign.com", // Assuming it's live
         github: "https://github.com/SkyBehind/Adorna-Design"
@@ -48,7 +48,7 @@ function Portfolio() {
       title: "Adorna Design Star Theme",
       description: "Custom WordPress theme built specifically for interior design professionals. Features advanced gallery systems and seamless e-commerce integration.",
       tags: ["WordPress Theme", "PHP", "Custom Design", "WooCommerce"],
-      image: "/portfolio/adorna-star-theme.jpg",
+      image: "/portfolio-assets/adorna-star-theme.jpg",
       links: {
         demo: "https://adornadesign.com",
         github: "https://github.com/SkyBehind/Adorna-Design-Star-Theme"
@@ -58,7 +58,7 @@ function Portfolio() {
       title: "Unicorn Commander",
       description: "Command center dashboard for AI operations and system management. Features real-time monitoring, analytics, and control interfaces.",
       tags: ["React", "Dashboard", "Real-time", "AI Integration"],
-      image: "/portfolio/unicorn-commander.jpg",
+      image: "/portfolio-assets/unicorn-commander.jpg",
       links: {
         demo: "https://unicorncommander.com/",
         github: null // Repo location unknown
@@ -73,7 +73,7 @@ function Portfolio() {
       title: "Coming Soon",
       description: "Our downloadable applications and tools will be showcased here. Stay tuned for innovative solutions!",
       tags: ["Apps", "Tools", "Downloads"],
-      image: "/portfolio/apps-coming-soon.jpg",
+      image: "/portfolio-assets/apps-coming-soon.jpg",
       links: {
         demo: "#",
         github: "#"
@@ -154,7 +154,7 @@ function Portfolio() {
                     <LazyImage
                       src={project.image}
                       alt={project.title}
-                      fallback="/portfolio/placeholder.svg"
+                      fallback="/portfolio-assets/placeholder.svg"
                     />
                   </Suspense>
                   <div className="image-overlay">
