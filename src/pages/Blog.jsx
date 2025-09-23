@@ -71,84 +71,96 @@ function Blog() {
   }
 
   return (
-    <div className="page-container">
+    <div className="page-container blog-magazine">
       <BackgroundSparkles />
 
-      {/* Hero Section */}
-      <section className="blog-hero">
+      {/* Latest Articles - Now at top */}
+      <section className="latest-articles magazine-hero">
         <div className="container">
           <motion.div
-            className="blog-hero-content"
+            className="magazine-header"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="glowing-text">The Unicorn Lab</h1>
-            <p className="hero-subtitle">
+            <h1 className="magazine-title">🔬 Latest from the Lab</h1>
+            <p className="magazine-subtitle">
               Where serious technical deep dives meet irresponsibly cool storytelling.
-              <br />
-              <strong>5 series. 30+ articles. Zero boring content.</strong>
+              Fresh insights from our engineering adventures.
             </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">30+</span>
-                <span className="stat-label">Technical Articles</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">5</span>
-                <span className="stat-label">Expert Series</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">∞</span>
-                <span className="stat-label">Lines of Code</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Latest Articles */}
-      <section className="latest-articles">
-        <div className="container">
-          <motion.div
-            className="section-header"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2>🔬 Latest from the Lab</h2>
-            <p>Fresh insights from our engineering adventures</p>
           </motion.div>
 
-          <div className="articles-grid">
-            {latestArticles.map((article, index) => (
+          <div className="magazine-grid">
+            {latestArticles.length > 0 && (
               <motion.div
-                key={article.id}
-                className="article-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="featured-article"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="article-header">
-                  <span className="series-badge" style={{ backgroundColor: article.seriesInfo.color }}>
-                    {article.seriesInfo.icon} {article.seriesInfo.title}
-                  </span>
-                  <span className="read-time">
-                    <FaClock /> {article.readTime} min read
-                  </span>
+                <div className="featured-image">
+                  <div className="article-overlay"></div>
+                  <div className="featured-content">
+                    <span className="featured-badge">Featured</span>
+                    <span className="series-badge" style={{ backgroundColor: latestArticles[0].seriesInfo.color }}>
+                      {latestArticles[0].seriesInfo.icon} {latestArticles[0].seriesInfo.title}
+                    </span>
+                    <h2>{latestArticles[0].title}</h2>
+                    <p className="featured-excerpt">{latestArticles[0].excerpt}</p>
+                    <div className="featured-meta">
+                      <span className="read-time">
+                        <FaClock /> {latestArticles[0].readTime} min read
+                      </span>
+                      <span className="difficulty" style={{ color: getDifficultyColor(latestArticles[0].seriesInfo.difficulty) }}>
+                        {latestArticles[0].seriesInfo.difficulty}
+                      </span>
+                    </div>
+                    <Link
+                      to={`/blog/series/${latestArticles[0].seriesId}/${latestArticles[0].slug}`}
+                      className="featured-cta"
+                    >
+                      Start Reading <FaArrowRight />
+                    </Link>
+                  </div>
                 </div>
-                <h3>{article.title}</h3>
-                <p className="article-excerpt">{article.excerpt}</p>
-                <Link
-                  to={`/blog/series/${article.seriesId}/${article.slug}`}
-                  className="article-link"
-                >
-                  Read Article <FaArrowRight />
-                </Link>
               </motion.div>
-            ))}
+            )}
+
+            <div className="recent-articles">
+              {latestArticles.slice(1).map((article, index) => (
+                <motion.div
+                  key={article.id}
+                  className="magazine-card"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (index + 1) * 0.1 }}
+                  whileHover={{ x: -5 }}
+                >
+                  <div className="card-image">
+                    <div className="card-overlay"></div>
+                    <span className="series-badge-small" style={{ backgroundColor: article.seriesInfo.color }}>
+                      {article.seriesInfo.icon}
+                    </span>
+                  </div>
+                  <div className="card-content">
+                    <div className="card-meta">
+                      <span className="series-name">{article.seriesInfo.title}</span>
+                      <span className="read-time">
+                        <FaClock /> {article.readTime}min
+                      </span>
+                    </div>
+                    <h3>{article.title}</h3>
+                    <p className="card-excerpt">{article.excerpt.substring(0, 120)}...</p>
+                    <Link
+                      to={`/blog/series/${article.seriesId}/${article.slug}`}
+                      className="card-link"
+                    >
+                      Read More <FaArrowRight />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
