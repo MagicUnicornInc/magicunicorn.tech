@@ -60,9 +60,9 @@ export default function Navbar() {
           <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''} aria-label="Portfolio">
             Portfolio
           </Link>
-          <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''} aria-label="Blog">
+          {/* <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''} aria-label="Blog">
             Blog
-          </Link>
+          </Link> */}
           <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} aria-label="Contact">
             Contact
           </Link>

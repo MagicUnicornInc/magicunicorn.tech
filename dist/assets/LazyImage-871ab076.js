@@ -1,0 +1,1 @@
+import{r as t,j as s}from"./index-dec3548c.js";const i=({src:e,alt:o})=>{const[d,r]=t.useState(!1);return t.useEffect(()=>{const a=new Image;a.src=e,a.onload=()=>r(!0)},[e]),d?s("img",{src:e,alt:o}):s("div",{children:"Loading..."})};export{i as default};
