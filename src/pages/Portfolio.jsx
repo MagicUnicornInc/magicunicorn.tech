@@ -2,7 +2,8 @@ import React, { lazy, Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
 import PageHeader from '../components/PageHeader';
 import BackgroundSparkles from '../components/BackgroundSparkles';
-import { FaGithub, FaExternalLinkAlt, FaGlobe, FaRocket, FaMobile } from 'react-icons/fa';
+import Lightbox from '../components/Lightbox';
+import { FaGithub, FaExternalLinkAlt, FaGlobe, FaRocket, FaMobile, FaExpand } from 'react-icons/fa';
 import '../styles/Portfolio.css';
 
 // Correct import path
@@ -10,6 +11,9 @@ const LazyImage = lazy(() => import('../components/LazyImage'));
 
 function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('websites');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const websites = [
     {
@@ -83,9 +87,40 @@ function Portfolio() {
 
   const currentProjects = activeCategory === 'websites' ? websites : apps;
 
+  const openLightbox = (project, index = 0) => {
+    // Create array of images for the project
+    // For now, we'll use just the main image, but this can be expanded
+    const images = [
+      {
+        src: project.image,
+        alt: project.title,
+        title: project.title,
+        description: project.description
+      }
+      // Add more images here if the project has multiple screenshots
+    ];
+
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
   return (
     <div className="page-container">
       <BackgroundSparkles />
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={closeLightbox}
+        />
+      )}
       <PageHeader
         title="Our Portfolio"
         subtitle="Explore our magical creations"
@@ -145,7 +180,11 @@ function Portfolio() {
                     <FaRocket /> Featured
                   </div>
                 )}
-                <div className="portfolio-image">
+                <div
+                  className="portfolio-image"
+                  onClick={() => openLightbox(project)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <Suspense fallback={
                     <div className="image-placeholder">
                       <div className="loading-shimmer"></div>
@@ -159,7 +198,8 @@ function Portfolio() {
                   </Suspense>
                   <div className="image-overlay">
                     <div className="overlay-content">
-                      <h4>View Project</h4>
+                      <FaExpand className="expand-icon" />
+                      <h4>Click to Enlarge</h4>
                     </div>
                   </div>
                 </div>
