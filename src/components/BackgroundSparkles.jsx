@@ -1,34 +1,59 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import '../styles/BackgroundSparkles.css';
 
-export default function BackgroundSparkles() {
+// Memoized to prevent unnecessary re-renders
+const BackgroundSparkles = memo(function BackgroundSparkles() {
   const { scrollY } = useScroll();
   const ref = useRef(null);
-  
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
   const y = useSpring(useTransform(scrollY, [0, 1000], [0, -200]), springConfig);
 
   useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleChange = (e) => {
+      setPrefersReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+
     const updateMousePosition = (e) => {
-      if (!ref.current) return;
-      
+      if (!ref.current || prefersReducedMotion) return;
+
       const { clientX, clientY } = e;
       const { left, top, width, height } = ref.current.getBoundingClientRect();
-      
+
       const x = (clientX - left) / width;
       const y = (clientY - top) / height;
-      
+
       ref.current.style.setProperty('--mouse-x', x);
       ref.current.style.setProperty('--mouse-y', y);
     };
 
     window.addEventListener('mousemove', updateMousePosition);
-    return () => window.removeEventListener('mousemove', updateMousePosition);
-  }, []);
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition);
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, [prefersReducedMotion]);
+
+  // Don't render sparkles if user prefers reduced motion
+  if (prefersReducedMotion) {
+    return null;
+  }
 
   return (
-    <div ref={ref} className="background-sparkles">
+    <div
+      ref={ref}
+      className="background-sparkles"
+      aria-hidden="true"
+      role="presentation"
+    >
       <motion.div className="sparkles-container" style={{ y }}>
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -52,4 +77,6 @@ export default function BackgroundSparkles() {
       </motion.div>
     </div>
   );
-}
+});
+
+export default BackgroundSparkles;

@@ -4,39 +4,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
   <meta name="description"
-    content="Magic Unicorn Unconventional Technology & Stuff Inc. - Transforming Ideas into Magic with AI & Innovation">
-  <meta name="keywords" content="AI solutions, artistic technology, open-source innovation, custom tech solutions">
-  <meta name="author" content="Magic Unicorn Tech">
-  <meta property="og:title" content="Magic Unicorn Tech">
-  <meta property="og:description" content="Transforming Ideas into Magic with AI & Innovation">
+    content="Transform your ideas into magic with AI-powered solutions, artistic technology, and open-source innovation. Custom tech solutions for the modern world.">
+  <meta name="keywords" content="AI solutions, artificial intelligence, machine learning, technology consulting, custom development, open source innovation, web development, tech solutions">
+  <meta name="author" content="Magic Unicorn Unconventional Technology & Stuff Inc.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://magicunicorn.tech">
-  <meta property="og:image" content="https://magicunicorn.tech/src/images/unicorn.svg">
+  <meta property="og:site_name" content="Magic Unicorn Tech">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Magic Unicorn Tech | AI-Powered Innovation & Technology Solutions">
+  <meta property="og:description" content="Transform your ideas into magic with our AI-powered solutions, artistic technology, and open-source innovation. Custom tech solutions for the modern world.">
+  <meta property="og:image" content="https://magicunicorn.tech/images/og-image-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Magic Unicorn Tech - AI & Innovation">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Magic Unicorn Tech">
-  <meta name="twitter:description" content="Transforming Ideas into Magic with AI & Innovation">
-  <meta name="twitter:image" content="https://magicunicorn.tech/src/images/unicorn.svg">
-  <link rel="icon" href="/assets/unicorn-78987db0.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/unicorn-78987db0.svg">
+  <meta name="twitter:site" content="@magicunicorntech">
+  <meta name="twitter:creator" content="@magicunicorntech">
+  <meta name="twitter:title" content="Magic Unicorn Tech | AI-Powered Innovation & Technology Solutions">
+  <meta name="twitter:description" content="Transform your ideas into magic with our AI-powered solutions, artistic technology, and open-source innovation.">
+  <meta name="twitter:image" content="https://magicunicorn.tech/images/twitter-card-1200x630.jpg">
+  <meta name="twitter:image:alt" content="Magic Unicorn Tech">
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/svg/unicorn-78987db0.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- PWA & Mobile -->
   <meta name="theme-color" content="#b66eff">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="canonical" href="https://magicunicorn.tech" />
+  <meta name="apple-mobile-web-app-title" content="Magic Unicorn Tech">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://magicunicorn.tech/" />
+
+  <!-- Language -->
+  <link rel="alternate" hreflang="en" href="https://magicunicorn.tech/" />
+
+  <!-- Performance Optimizations: Resource Hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  <!-- Preload critical assets -->
+  <link rel="modulepreload" href="data:text/jsx;base64,aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IFJlYWN0RE9NIGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnOwppbXBvcnQgQXBwIGZyb20gJy4vQXBwJzsKaW1wb3J0ICcuL2luZGV4LmNzcyc7CmltcG9ydCB7IGluaXRXZWJWaXRhbHMgfSBmcm9tICcuL3V0aWxzL3dlYlZpdGFscyc7CgovLyBSZWdpc3RlciB0aGUgc2VydmljZSB3b3JrZXIKaWYgKCdzZXJ2aWNlV29ya2VyJyBpbiBuYXZpZ2F0b3IpIHsKICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcignbG9hZCcsICgpID0+IHsKICAgIG5hdmlnYXRvci5zZXJ2aWNlV29ya2VyLnJlZ2lzdGVyKCcvc2VydmljZS13b3JrZXIuanMnKQogICAgICAudGhlbigocmVnaXN0cmF0aW9uKSA9PiB7CiAgICAgICAgY29uc29sZS5sb2coJ1NlcnZpY2UgV29ya2VyIHJlZ2lzdGVyZWQ6ICcsIHJlZ2lzdHJhdGlvbik7CiAgICAgIH0pCiAgICAgIC5jYXRjaCgoZXJyb3IpID0+IHsKICAgICAgICBjb25zb2xlLmxvZygnU2VydmljZSBXb3JrZXIgcmVnaXN0cmF0aW9uIGZhaWxlZDogJywgZXJyb3IpOwogICAgICB9KTsKICB9KTsKfQoKLy8gRW5zdXJlIHRoZSByb290IGVsZW1lbnQgZXhpc3RzCmNvbnN0IHJvb3RFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKTsKaWYgKCFyb290RWxlbWVudCkgewogIGNvbnN0IHJvb3QgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICByb290LmlkID0gJ3Jvb3QnOwogIGRvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQocm9vdCk7Cn0KClJlYWN0RE9NLmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSkucmVuZGVyKAogIDxSZWFjdC5TdHJpY3RNb2RlPgogICAgPEFwcCAvPgogIDwvUmVhY3QuU3RyaWN0TW9kZT4KKTsKCi8vIEluaXRpYWxpemUgV2ViIFZpdGFscyB0cmFja2luZwppZiAodHlwZW9mIHdpbmRvdyAhPT0gJ3VuZGVmaW5lZCcpIHsKICAvLyBEZWxheSB0byBhdm9pZCBibG9ja2luZyBpbml0aWFsIHJlbmRlcgogIHNldFRpbWVvdXQoKCkgPT4gewogICAgaW5pdFdlYlZpdGFscygpOwogIH0sIDEwMDApOwp9Cg==">
+  
+  <link rel="preload" as="image" href="/images/og-image-1200x630.jpg">
+
+  <!-- Prefetch likely next routes for instant navigation -->
+  <link rel="prefetch" href="/services" as="document">
+  <link rel="prefetch" href="/portfolio" as="document">
+  <link rel="prefetch" href="/about" as="document">
+
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Magic Unicorn Tech",
-      "url": "https://magicunicorn.tech",
-      "logo": "https://magicunicorn.tech/src/images/unicorn.svg",
-      "description": "Transforming Ideas into Magic with AI & Innovation",
-      "sameAs": [
-        "https://twitter.com/magicunicorntech",
-        "https://linkedin.com/company/magicunicorntech"
-      ]
-    }
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Magic Unicorn Unconventional Technology & Stuff Inc.",
+        "alternateName": "Magic Unicorn Tech",
+        "url": "https://magicunicorn.tech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://magicunicorn.tech/images/logo-512x512.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://magicunicorn.tech/images/og-image-1200x630.jpg",
+        "description": "Transform your ideas into magic with AI-powered solutions, artistic technology, and open-source innovation. Custom tech solutions for the modern world.",
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "name": "Shafen Khan"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "contact@magicunicorn.tech",
+          "availableLanguage": ["English"]
+        },
+        "sameAs": [
+          "https://twitter.com/magicunicorntech",
+          "https://linkedin.com/company/magicunicorntech",
+          "https://github.com/magicunicorntech"
+        ],
+        "areaServed": "Worldwide",
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Web Development",
+          "Open Source Software",
+          "Technology Consulting"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Magic Unicorn Tech",
+        "url": "https://magicunicorn.tech",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://magicunicorn.tech/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJKYT7CV33"></script>
   <script>
@@ -45,9 +135,12 @@
     gtag('js', new Date());
     gtag('config', 'G-FJKYT7CV33');
   </script>
-  <title>Magic Unicorn Tech</title>
-  <script type="module" crossorigin src="/assets/index-707bbdfe.js"></script>
-  <link rel="stylesheet" href="/assets/index-f81fafbd.css">
+  <title>Magic Unicorn Tech | AI-Powered Innovation & Technology Solutions</title>
+  <script type="module" crossorigin src="/assets/js/index-f92cb07f.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/js/react-vendor-f16e7f43.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/framer-motion-3aeaf91e.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/icons-66efe12a.js">
+  <link rel="stylesheet" href="/assets/css/index-8ba87076.css">
 </head>
 
 <body>

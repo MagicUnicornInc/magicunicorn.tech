@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home Page - Highest Priority -->
+  <url>
+    <loc>https://magicunicorn.tech/</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://magicunicorn.tech/images/og-image-1200x630.jpg</image:loc>
+      <image:title>Magic Unicorn Tech - AI &amp; Innovation</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://magicunicorn.tech/about</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services Page - High Priority for Conversions -->
+  <url>
+    <loc>https://magicunicorn.tech/services</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio Page - High Priority for Showcasing Work -->
+  <url>
+    <loc>https://magicunicorn.tech/portfolio</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Index - High Priority for Content -->
+  <url>
+    <loc>https://magicunicorn.tech/blog</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://magicunicorn.tech/contact</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Series Pages (Add as they are created) -->
+  <!-- Example:
+  <url>
+    <loc>https://magicunicorn.tech/blog/series/ai-fundamentals</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  -->
+
+  <!-- Individual Blog Articles (Add as they are published) -->
+  <!-- Example:
+  <url>
+    <loc>https://magicunicorn.tech/blog/series/ai-fundamentals/getting-started</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://magicunicorn.tech/images/blog/article-thumbnail.jpg</image:loc>
+      <image:title>Article Title</image:title>
+    </image:image>
+  </url>
+  -->
+
+</urlset>

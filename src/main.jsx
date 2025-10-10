@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
+import { initWebVitals } from './utils/webVitals';
 
 // Register the service worker
 if ('serviceWorker' in navigator) {
@@ -29,3 +30,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
+// Initialize Web Vitals tracking
+if (typeof window !== 'undefined') {
+  // Delay to avoid blocking initial render
+  setTimeout(() => {
+    initWebVitals();
+  }, 1000);
+}

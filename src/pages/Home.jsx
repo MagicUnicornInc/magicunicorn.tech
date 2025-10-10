@@ -9,108 +9,44 @@ import '../styles/ServiceOptions.css';
 // Lazy load components
 const LazyImage = lazy(() => import('../components/LazyImage'));
 
-// Array of cycling headline pairs
+// Array of cycling headline pairs - 2026 Edition
+// 30 new headline/tagline pairs optimized for vision, execution, and impact
 const headlinePairs = [
-  {
-    headline: "Where Tech Meets Magic",
-    tagline: "Transforming Ideas into Digital Enchantment"
-  },
-  {
-    headline: "Like Skunkworks — But With Pizzazz",
-    tagline: "R&D, but make it sparkle."
-  },
-  {
-    headline: "Serious Tech in an Irresponsibly Cool Wrapper",
-    tagline: "Enterprise on the outside, party in the code."
-  },
-  {
-    headline: "Built for Builders. Loved by Rebels.",
-    tagline: "We don't just ship; we shift paradigms."
-  },
-  {
-    headline: "Unconventional Tools for the Exceptionally Driven",
-    tagline: "You bring the ambition. We bring the unicorns."
-  },
-  {
-    headline: "Where Engineering Gets Its Groove Back",
-    tagline: "Code meets creativity in every commit."
-  },
-  {
-    headline: "Open Source, With Swagger",
-    tagline: "Free as in freedom. Cool as in 😎."
-  },
-  {
-    headline: "Tech That Gets Sh*t Done — and Looks Good Doing It",
-    tagline: "Form. Function. Flex."
-  },
-  {
-    headline: "Commanding the Future, One AI at a Time",
-    tagline: "Take Command. Conquer. Win."
-  },
-  {
-    headline: "The Only Stack That Comes with Personality",
-    tagline: "And maybe a beret."
-  },
-  {
-    headline: "Innovation That Doesn't Apologize",
-    tagline: "Neither should you."
-  },
-  {
-    headline: "Bold Enough to Build It. Sharp Enough to Ship It.",
-    tagline: "And weird enough to enjoy it."
-  },
-  {
-    headline: "Your Back Office Just Grew a Brain",
-    tagline: "A fabulous one."
-  },
-  {
-    headline: "From Back-of-the-Napkin to Battle-Tested",
-    tagline: "We build what others brainstorm."
-  },
-  {
-    headline: "Make Your Competitors Look Like They're on Dial-Up",
-    tagline: "Even if they aren't."
-  },
-  {
-    headline: "The Infrastructure of Imagination",
-    tagline: "Fantasy? Nah. Just really good engineering."
-  },
-  {
-    headline: "Tools So Good, You'll Think They're Cheating",
-    tagline: "They're not. Probably."
-  },
-  {
-    headline: "Because Boring Software is a Crime",
-    tagline: "We've alerted the authorities."
-  },
-  {
-    headline: "Digital Power Suits for Creative Assassins",
-    tagline: "Look sharp. Move fast."
-  },
-  {
-    headline: "Enterprise-Grade. Street-Tested. Unicorn-Approved.",
-    tagline: "Charleston built. Global bound."
-  },
-  {
-    headline: "Crafted with Precision. Deployed with Panache.",
-    tagline: "The devil's in the Dockerfile."
-  },
-  {
-    headline: "Helping You Outwork the Competition Without Breaking a Sweat",
-    tagline: "Your AI hustle, with ergonomic flair."
-  },
-  {
-    headline: "Where Mission Control Meets Unicorn Magic",
-    tagline: "Houston, we have liftoff… and glitter."
-  },
-  {
-    headline: "Don't Just Scale — Swagger While You Do It",
-    tagline: "Elastic. Electric. Elegant."
-  },
-  {
-    headline: "Work Smarter. Launch Faster. Command Everything.",
-    tagline: "Unicorn Commander at your service."
-  }
+  // Tier 1: Vision + Execution
+  { headline: "Where AI Meets Ambition", tagline: "Intelligence, but make it irresponsible." },
+  { headline: "The Future's Favorite Tech Partner", tagline: "Tomorrow called. It wants to collaborate." },
+  { headline: "Building Tomorrow's Unicorns Today", tagline: "Mythical results. Very real execution." },
+  { headline: "Vision Without Execution is Hallucination", tagline: "Good thing we ship." },
+  { headline: "Where Founders Come to Execute", tagline: "Ideas welcome. Delivery guaranteed." },
+  { headline: "The Gap Between Should and Done? We Close It.", tagline: "Execution as a service. Excellence as standard." },
+  { headline: "Your Technical Co-Founder. Only Better.", tagline: "All the talent, none of the equity drama." },
+  { headline: "We Turn 'What If' Into 'Watch This'", tagline: "Speculation is boring. Shipping is sexy." },
+  { headline: "Impossibly Fast. Impossibly Good.", tagline: "Pick both. We insist." },
+  { headline: "The Innovation Engine Your Board Wishes You Had", tagline: "R&D meets ROI. Finally." },
+
+  // Tier 2: Technical Excellence + Swagger
+  { headline: "Code Like Your Valuation Depends On It", tagline: "Because it probably does." },
+  { headline: "Enterprise Architecture, Startup Velocity", tagline: "Scale without the scars." },
+  { headline: "AI That Actually Works", tagline: "Imagine that." },
+  { headline: "Technical Debt? We Don't Speak That Language.", tagline: "Clean code. Clear thinking. Consistent wins." },
+  { headline: "From Zero to Production-Ready in Record Time", tagline: "MVPs with attitude." },
+  { headline: "The Tech Stack That Ships Itself", tagline: "Automation so good it feels like cheating." },
+  { headline: "Built for Scale. Optimized for Speed. Designed for Delight.", tagline: "Three things most teams can't do. We do all three." },
+  { headline: "Where Performance Metrics Meet Performance Art", tagline: "Fast code that looks good doing it." },
+  { headline: "Serious Engineering with a Sense of Humor", tagline: "The code is flawless. The jokes are questionable." },
+  { headline: "Technical Excellence Without the Technical Ego", tagline: "Just results. And maybe a little swagger." },
+
+  // Tier 3: Market Position + Differentiation
+  { headline: "Not Your Average Dev Shop", tagline: "Thank god." },
+  { headline: "The Unicorn Builder's Secret Weapon", tagline: "Ask the ones who made it." },
+  { headline: "Charleston's Best-Kept Tech Secret", tagline: "Now going global. You're welcome." },
+  { headline: "Where Moonshots Meet Reality", tagline: "And reality wins." },
+  { headline: "Innovation That Investors Actually Fund", tagline: "Visionary tech, bankable outcomes." },
+  { headline: "The Agency That Acts Like Your In-House Team", tagline: "Except we ship faster." },
+  { headline: "Premium Tech Without Premium Bureaucracy", tagline: "All craft, zero committee." },
+  { headline: "Built Different. Shipped Better.", tagline: "Charleston made. Globally validated." },
+  { headline: "The Technical Partner That Gets It", tagline: "Product sense. Business acumen. Technical chops." },
+  { headline: "From Pitch Deck to Production", tagline: "We build what VCs bet on." }
 ];
 
 export default function Home() {

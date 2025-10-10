@@ -1,0 +1,331 @@
+/**
+ * Input Component Styles - 2026 Edition
+ * Modern form inputs with floating labels and validation
+ */
+
+@import '../../styles/shared/tokens.css';
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* ============================================
+   LABEL
+   ============================================ */
+
+.input-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.input-container--focused .input-label,
+.input-container--has-value .input-label {
+  color: var(--color-text-primary);
+}
+
+.input-container--error .input-label {
+  color: var(--color-error);
+}
+
+.input-container--success .input-label {
+  color: var(--color-success);
+}
+
+.input-label__required {
+  color: var(--color-error);
+  margin-left: var(--spacing-1);
+}
+
+/* ============================================
+   INPUT WRAPPER
+   ============================================ */
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   INPUT FIELD
+   ============================================ */
+
+.input-field {
+  flex: 1;
+  width: 100%;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--duration-base) var(--ease-in-out);
+}
+
+.input-field::placeholder {
+  color: var(--color-text-tertiary);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.input-container--focused .input-field::placeholder,
+.input-container--has-value .input-field::placeholder {
+  opacity: 1;
+}
+
+/* Focus state */
+.input-container--focused .input-field {
+  border-color: var(--color-brand-purple);
+  background: var(--color-bg-tertiary);
+  box-shadow: var(--shadow-magical-sm);
+}
+
+/* Error state */
+.input-container--error .input-field {
+  border-color: var(--color-error);
+}
+
+.input-container--error.input-container--focused .input-field {
+  box-shadow: 0 0 0 3px var(--color-error-bg);
+}
+
+/* Success state */
+.input-container--success .input-field {
+  border-color: var(--color-success);
+}
+
+.input-container--success.input-container--focused .input-field {
+  box-shadow: 0 0 0 3px var(--color-success-bg);
+}
+
+/* Disabled state */
+.input-container--disabled .input-field {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-disabled);
+}
+
+/* Hover state */
+.input-field:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.input-container--sm .input-field {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  min-height: var(--size-sm);
+}
+
+.input-container--sm .input-icon {
+  width: 2rem;
+}
+
+.input-container--md .input-field {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  min-height: var(--size-md);
+}
+
+.input-container--md .input-icon {
+  width: 2.5rem;
+}
+
+.input-container--lg .input-field {
+  padding: var(--spacing-4) var(--spacing-5);
+  font-size: var(--font-size-lg);
+  min-height: var(--size-lg);
+}
+
+.input-container--lg .input-icon {
+  width: 3rem;
+}
+
+/* Adjust padding when icons are present */
+.input-icon--left ~ .input-field {
+  padding-left: 2.5rem;
+}
+
+.input-container--sm .input-icon--left ~ .input-field {
+  padding-left: 2rem;
+}
+
+.input-container--lg .input-icon--left ~ .input-field {
+  padding-left: 3rem;
+}
+
+.input-icon--right {
+  padding-right: 2.5rem;
+}
+
+/* ============================================
+   ICONS
+   ============================================ */
+
+.input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  transition: color var(--duration-fast) var(--ease-out);
+  pointer-events: none;
+}
+
+.input-icon--left {
+  left: var(--spacing-3);
+}
+
+.input-icon--right {
+  right: var(--spacing-3);
+}
+
+.input-icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.input-container--focused .input-icon {
+  color: var(--color-brand-purple);
+}
+
+.input-container--error .input-icon {
+  color: var(--color-error);
+}
+
+.input-container--success .input-icon {
+  color: var(--color-success);
+}
+
+/* ============================================
+   FOCUS RING
+   ============================================ */
+
+.input-focus-ring {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--color-brand-purple);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ============================================
+   MESSAGES
+   ============================================ */
+
+.input-message {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+  margin: 0;
+  padding-left: var(--spacing-1);
+}
+
+.input-message--helper {
+  color: var(--color-text-tertiary);
+}
+
+.input-message--error {
+  color: var(--color-error);
+}
+
+.input-message--success {
+  color: var(--color-success);
+}
+
+/* ============================================
+   TEXTAREA VARIANT
+   ============================================ */
+
+textarea.input-field {
+  min-height: 100px;
+  resize: vertical;
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-3);
+}
+
+/* ============================================
+   FLOATING LABEL VARIANT (Optional)
+   ============================================ */
+
+.input-container--floating {
+  position: relative;
+}
+
+.input-container--floating .input-label {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-4);
+  transform: translateY(-50%);
+  pointer-events: none;
+  background: var(--color-bg-secondary);
+  padding: 0 var(--spacing-1);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.input-container--floating.input-container--focused .input-label,
+.input-container--floating.input-container--has-value .input-label {
+  top: 0;
+  font-size: var(--font-size-xs);
+  transform: translateY(-50%);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .input-container--lg .input-field {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .input-field,
+  .input-label,
+  .input-icon,
+  .input-message {
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .input-field {
+    border: 1px solid currentColor;
+  }
+
+  .input-focus-ring {
+    border: 2px solid Highlight;
+  }
+}
+
+/* ============================================
+   AUTOFILL STYLING
+   ============================================ */
+
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px var(--color-bg-secondary) inset !important;
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
