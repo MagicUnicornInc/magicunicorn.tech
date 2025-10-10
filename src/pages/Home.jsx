@@ -56,27 +56,6 @@ export default function Home() {
   return (
     <div className="home">
       <section className="hero-section">
-        <div className="sparkles">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="sparkle"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
         <Suspense fallback={<div>Loading...</div>}>
           <motion.img 
             src={UnicornLogo}

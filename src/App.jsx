@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ParticleSystem from './components/ParticleNetwork';
 import './styles/accessibility.css';
 
 // Critical routes - load immediately
@@ -87,6 +88,9 @@ function AppWithPageViews() {
 
   return (
     <ErrorBoundary>
+      {/* 2026 Neural Network Particle System */}
+      <ParticleSystem />
+
       {/* Skip to Content Link - WCAG 2.4.1 */}
       <a
         href="#main-content"
