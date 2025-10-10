@@ -1,0 +1,73 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with 2026 Galactic Theme -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#1a0f2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0514;stop-opacity:1" />
+    </radialGradient>
+
+    <radialGradient id="glowGradient" cx="30%" cy="40%">
+      <stop offset="0%" style="stop-color:#b66eff;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#9333ea;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+    </radialGradient>
+
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b66eff" />
+      <stop offset="50%" style="stop-color:#00d4ff" />
+      <stop offset="100%" style="stop-color:#ffd700" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <rect width="1200" height="630" fill="url(#glowGradient)"/>
+
+  <!-- Decorative Particles -->
+  <circle cx="150" cy="100" r="3" fill="#b66eff" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="1050" cy="500" r="4" fill="#00d4ff" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="900" cy="150" r="2.5" fill="#ffd700" opacity="0.4"/>
+  <circle cx="200" cy="550" r="3.5" fill="#b66eff" opacity="0.5"/>
+  <circle cx="1100" cy="200" r="2" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="100" cy="400" r="3" fill="#ffd700" opacity="0.3" filter="url(#glow)"/>
+
+  <!-- Connection Lines -->
+  <line x1="150" y1="100" x2="1100" y2="200" stroke="#b66eff" stroke-width="0.5" opacity="0.2"/>
+  <line x1="1050" y1="500" x2="200" y2="550" stroke="#00d4ff" stroke-width="0.5" opacity="0.2"/>
+  <line x1="900" y1="150" x2="100" y2="400" stroke="#ffd700" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Logo (Unicorn) -->
+  <g transform="translate(100, 150) scale(0.25)">
+    <!-- Simplified unicorn silhouette -->
+    <path d="M 235,400 C 180,400 140,350 140,290 C 140,250 160,220 190,200 C 170,180 160,150 160,120 C 160,60 210,10 270,10 C 300,10 325,25 340,45 C 355,25 380,10 410,10 C 470,10 520,60 520,120 C 520,150 510,180 490,200 C 520,220 540,250 540,290 C 540,350 500,400 445,400 L 235,400 Z"
+          fill="url(#textGradient)"
+          filter="url(#glow)"/>
+  </g>
+
+  <!-- Text Content -->
+  <text x="420" y="270" font-family="'Inter', 'Space Grotesk', sans-serif" font-size="72" font-weight="800" fill="url(#textGradient)" filter="url(#glow)">
+    Magic Unicorn Tech
+  </text>
+
+  <text x="420" y="350" font-family="'Inter', sans-serif" font-size="32" font-weight="500" fill="#b3b3b3">
+    Where AI Meets Ambition
+  </text>
+
+  <text x="420" y="410" font-family="'Inter', sans-serif" font-size="24" font-weight="400" fill="#6b7280" font-style="italic">
+    Intelligence, but make it irresponsible.
+  </text>
+
+  <!-- Bottom Tagline -->
+  <text x="600" y="580" font-family="'Inter', sans-serif" font-size="18" font-weight="400" fill="#4b5563" text-anchor="middle">
+    AI-Powered Innovation | Custom Tech Solutions | 2026-Ready
+  </text>
+</svg>

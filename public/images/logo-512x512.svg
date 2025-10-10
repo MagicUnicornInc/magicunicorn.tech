@@ -1,0 +1,49 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 2026 Logo - Simplified Unicorn with Neural Network Theme -->
+  <defs>
+    <radialGradient id="logoGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#1a0f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0514;stop-opacity:1" />
+    </radialGradient>
+
+    <linearGradient id="unicornGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b66eff" />
+      <stop offset="50%" style="stop-color:#00d4ff" />
+      <stop offset="100%" style="stop-color:#ffd700" />
+    </linearGradient>
+
+    <filter id="logoGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#logoGradient)" rx="64"/>
+
+  <!-- Decorative Particles -->
+  <circle cx="80" cy="80" r="3" fill="#b66eff" opacity="0.8" filter="url(#logoGlow)"/>
+  <circle cx="432" cy="432" r="4" fill="#00d4ff" opacity="0.7" filter="url(#logoGlow)"/>
+  <circle cx="400" cy="100" r="2.5" fill="#ffd700" opacity="0.6"/>
+  <circle cx="100" cy="400" r="3" fill="#b66eff" opacity="0.6"/>
+
+  <!-- Connection Lines -->
+  <line x1="80" y1="80" x2="400" y2="100" stroke="#b66eff" stroke-width="1" opacity="0.3"/>
+  <line x1="432" y1="432" x2="100" y2="400" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Unicorn Head (Centered, Larger) -->
+  <g transform="translate(106, 106)">
+    <!-- Simplified unicorn head silhouette -->
+    <path d="M 150,300 C 100,300 60,260 60,210 C 60,180 75,155 95,140 C 80,125 70,105 70,80 C 70,35 105,0 150,0 C 170,0 185,10 195,25 C 205,10 220,0 240,0 C 285,0 320,35 320,80 C 320,105 310,125 295,140 C 315,155 330,180 330,210 C 330,260 290,300 240,300 L 150,300 Z"
+          fill="url(#unicornGradient)"
+          filter="url(#logoGlow)"/>
+
+    <!-- Horn (Central Magic Element) -->
+    <path d="M 195,25 L 185,0 L 205,0 Z"
+          fill="#ffd700"
+          filter="url(#logoGlow)"/>
+  </g>
+</svg>
