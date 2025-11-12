@@ -171,7 +171,17 @@ transition={{ delay: 0.3, duration: 0.8 }}
 - **Meta Tags**: Open Graph and Twitter Card support
 - **Structured Data**: JSON-LD schema markup
 - **Sitemap Generation**: Automatic sitemap creation
-- **Analytics Ready**: Google Analytics integration
+- **Analytics**: Umami Analytics integration (privacy-focused, GDPR-compliant)
+
+## 📊 Analytics
+
+This website uses [Umami Analytics](https://umami.is) for privacy-friendly, GDPR-compliant website analytics.
+
+- **Analytics Dashboard**: https://umami.unicorncommander.ai
+- **Privacy**: No cookies, anonymous tracking, self-hosted
+- **Implementation**: Tracking script integrated in main HTML file
+
+The Umami tracking script provides real-time insights while respecting visitor privacy and complying with GDPR regulations.
 
 ## 📊 Performance Metrics
 

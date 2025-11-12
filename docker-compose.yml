@@ -11,7 +11,18 @@ services:
       - "3000:80"  # This makes it accessible on all networks at port 3000
     networks:
       - magic-network
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      # Router - Cloudflare handles SSL/TLS
+      - "traefik.http.routers.magicunicorn.rule=Host(`magicunicorn.tech`) || Host(`www.magicunicorn.tech`)"
+      - "traefik.http.routers.magicunicorn.entrypoints=web"
+      # Service
+      - "traefik.http.services.magicunicorn.loadbalancer.server.port=80"
 
 networks:
   magic-network:
     driver: bridge
+  web:
+    external: true
