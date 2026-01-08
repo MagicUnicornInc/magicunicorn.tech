@@ -5,21 +5,39 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: magic-unicorn-web
+    container_name: magicunicorn-tech
     restart: unless-stopped
     ports:
-      - "3000:80"  # This makes it accessible on all networks at port 3000
+      - "3000:80"
+    depends_on:
+      - booking-api
     networks:
       - magic-network
       - web
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=web"
-      # Router - Cloudflare handles SSL/TLS
       - "traefik.http.routers.magicunicorn.rule=Host(`magicunicorn.tech`) || Host(`www.magicunicorn.tech`)"
-      - "traefik.http.routers.magicunicorn.entrypoints=web"
-      # Service
+      - "traefik.http.routers.magicunicorn.entrypoints=http,https"
       - "traefik.http.services.magicunicorn.loadbalancer.server.port=80"
+
+  booking-api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: magicunicorn-booking-api
+    restart: unless-stopped
+    environment:
+      - PORT=3333
+      - FRONTEND_URL=https://magicunicorn.tech
+      - TIMEZONE=America/New_York
+      - MS365_CLIENT_ID=${MS365_CLIENT_ID}
+      - MS365_TENANT_ID=${MS365_TENANT_ID}
+      - MS365_CLIENT_SECRET=${MS365_CLIENT_SECRET}
+      - MS365_USER_EMAIL=${MS365_USER_EMAIL}
+      - TURNSTILE_SECRET_KEY=${TURNSTILE_SECRET_KEY}
+    networks:
+      - magic-network
 
 networks:
   magic-network:

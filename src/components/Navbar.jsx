@@ -51,20 +51,23 @@ export default function Navbar() {
           <Link to="/" className={location.pathname === '/' ? 'active' : ''} aria-label="Home">
             Home
           </Link>
-          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} aria-label="About">
-            About
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} aria-label="About the Studio">
+            Studio
           </Link>
-          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} aria-label="Services">
-            Services
+          <Link to="/platforms" className={location.pathname === '/platforms' ? 'active' : ''} aria-label="Platforms">
+            Platforms
+          </Link>
+          <Link to="/accelerator" className={location.pathname === '/accelerator' ? 'active' : ''} aria-label="Technical Accelerator">
+            Accelerator
+          </Link>
+          <Link to="/consulting" className={location.pathname === '/consulting' ? 'active' : ''} aria-label="Consulting">
+            Consulting
           </Link>
           <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''} aria-label="Portfolio">
             Portfolio
           </Link>
-          {/* <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''} aria-label="Blog">
-            Blog
-          </Link> */}
-          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} aria-label="Contact">
-            Contact
+          <Link to="/book" className={`nav-cta ${location.pathname === '/book' ? 'active' : ''}`} aria-label="Book Consultation">
+            Book
           </Link>
         </div>
       </div>

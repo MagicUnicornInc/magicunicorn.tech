@@ -1,4 +1,6 @@
-/* Hero Section Styles */
+/* Home Page Styles */
+
+/* Hero Section */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -11,14 +13,50 @@
   overflow: hidden;
 }
 
-/* Services Section Styles */
-.services-section {
-  padding: 4rem 0;
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 1rem;
+  background: var(--gradient-magic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+}
+
+/* Build Section - What We Build */
+.build-section {
+  padding: 6rem 0;
   background: var(--dark-surface);
   position: relative;
 }
 
-.services-section::before {
+.build-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -28,69 +66,256 @@
   background: var(--gradient-magic);
 }
 
-/* Features Section Styles */
-.features-section {
-  padding: 6rem 0;
-  background: var(--dark-bg);
-}
-
-.features-grid {
+.build-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
 }
 
-.feature-card {
-  background: var(--dark-surface);
-  padding: 2rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.build-card {
+  background: var(--dark-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-icon {
-  font-size: 2.5rem;
+.build-card:hover {
+  box-shadow: var(--shadow-magical);
+}
+
+.build-icon {
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   background: var(--gradient-magic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.feature-card h3 {
+.build-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  background: var(--gradient-magic);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
 }
 
-.feature-card p {
+.build-card p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-/* Section Title Styles */
-.section-title {
-  text-align: center;
-  margin-bottom: 3rem;
+.build-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--unicorn-purple);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, gap 0.3s ease;
 }
 
-.section-title h2 {
-  font-size: 2.5rem;
+.build-link:hover {
+  color: var(--unicorn-blue);
+  gap: 0.75rem;
+}
+
+/* Platforms Preview Section */
+.platforms-preview-section {
+  padding: 6rem 0;
+  background: var(--dark-bg);
+}
+
+.platforms-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.platform-preview-card {
+  background: var(--dark-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--platform-color, var(--unicorn-purple));
+}
+
+.platform-preview-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px color-mix(in srgb, var(--platform-color) 15%, transparent);
+}
+
+.platform-preview-icon {
+  font-size: 3rem;
+  color: var(--platform-color, var(--unicorn-purple));
+  margin-bottom: 1.5rem;
+}
+
+.platform-preview-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.platform-preview-tagline {
+  font-size: 1rem;
+  color: var(--platform-color, var(--unicorn-purple));
+  font-weight: 500;
   margin-bottom: 1rem;
+}
+
+.platform-preview-desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.platform-preview-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--platform-color, var(--unicorn-purple));
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.platform-preview-link:hover {
+  gap: 0.75rem;
+}
+
+/* Engage Section - How We Work */
+.engage-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(182, 110, 255, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.engage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.engage-card {
+  background: var(--dark-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.engage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-magical);
+}
+
+.engage-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   background: var(--gradient-magic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.section-title p {
+.engage-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.engage-card p {
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-/* CTA Section Styles */
+.engage-card .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--unicorn-purple);
+  color: var(--unicorn-purple);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.engage-card .btn-secondary:hover {
+  background: var(--unicorn-purple);
+  color: white;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  padding: 6rem 0;
+  background: var(--dark-bg);
+}
+
+.philosophy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.philosophy-text h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 1.5rem;
+  background: var(--gradient-magic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.philosophy-text > p {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.principle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--dark-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.principle-icon {
+  color: var(--unicorn-purple);
+  font-size: 1.25rem;
+}
+
+.principle span {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* CTA Section */
 .cta-section {
   background: linear-gradient(45deg, rgba(182, 110, 255, 0.1), rgba(0, 212, 255, 0.1));
   padding: 6rem 2rem;
@@ -109,23 +334,102 @@
   background: radial-gradient(circle at center, rgba(182, 110, 255, 0.1), transparent 70%);
 }
 
+.cta-section h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 1rem;
+  background: var(--gradient-magic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.cta-section p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .hero-section {
     padding: 4rem 1rem;
   }
 
-  .section-title h2 {
-    font-size: 2rem;
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
   }
 
-  .features-grid {
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-header h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .build-section,
+  .platforms-preview-section,
+  .engage-section,
+  .philosophy-section {
+    padding: 4rem 0;
+  }
+
+  .build-grid,
+  .platforms-preview-grid,
+  .engage-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    padding: 0 1rem;
   }
 
-  .feature-card {
-    padding: 1.5rem;
+  .build-card,
+  .platform-preview-card,
+  .engage-card {
+    padding: 2rem;
+  }
+
+  .philosophy-content {
+    padding: 0 1rem;
+  }
+
+  .philosophy-principles {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 }
 
