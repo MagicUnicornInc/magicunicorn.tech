@@ -10,55 +10,107 @@ import { UnicornLogo } from '../images';
 import BackgroundSparkles from '../components/BackgroundSparkles';
 import '../styles/Home.css';
 
-// Studio-focused rotating headlines
+// Original rotating catchphrases - keep the personality!
 const headlinePairs = [
   {
-    headline: "The Architecture of What Comes Next",
-    tagline: "A systems studio building AI infrastructure for those who refuse to rent their future."
+    headline: "Where Tech Meets Magic",
+    tagline: "Transforming Ideas into Digital Enchantment"
   },
   {
-    headline: "We Build the Command Center. You Run the Mission.",
-    tagline: "AI infrastructure designed for operators, not spectators."
+    headline: "Like Skunkworks — But With Pizzazz",
+    tagline: "R&D, but make it sparkle."
   },
   {
-    headline: "Systems That Scale. Control That Stays Yours.",
-    tagline: "Open-source foundations. Enterprise-grade execution."
+    headline: "Serious Tech in an Irresponsibly Cool Wrapper",
+    tagline: "Enterprise on the outside, party in the code."
   },
   {
-    headline: "Not Another AI Company. A Technology Studio.",
-    tagline: "Platforms, accelerators, and the infrastructure beneath them."
+    headline: "Built for Builders. Loved by Rebels.",
+    tagline: "We don't just ship; we shift paradigms."
   },
   {
-    headline: "Where Platforms Are Forged",
-    tagline: "From concept to command center — we build what others assemble."
+    headline: "Unconventional Tools for the Exceptionally Driven",
+    tagline: "You bring the ambition. We bring the unicorns."
   },
   {
-    headline: "Infrastructure for the Ambitious",
-    tagline: "AI ecosystems designed for control, not compromise."
+    headline: "Where Engineering Gets Its Groove Back",
+    tagline: "Code meets creativity in every commit."
   },
   {
-    headline: "Building the Operating Layer for AI",
-    tagline: "The stack beneath your stack."
+    headline: "Open Source, With Swagger",
+    tagline: "Free as in freedom. Cool as in cool."
   },
   {
-    headline: "The Studio Behind the Systems",
-    tagline: "Unicorn Commander. Center Deep. Cognitive Companion. All from here."
+    headline: "Tech That Gets Sh*t Done — and Looks Good Doing It",
+    tagline: "Form. Function. Flex."
   },
   {
-    headline: "Unconventional Technology for Unconventional Problems",
-    tagline: "If it fits a template, someone else already built it."
+    headline: "Commanding the Future, One AI at a Time",
+    tagline: "Take Command. Conquer. Win."
   },
   {
-    headline: "Serious Systems. Approachable Wrapper.",
-    tagline: "Enterprise capability without the enterprise conformity."
+    headline: "The Only Stack That Comes with Personality",
+    tagline: "And maybe a beret."
   },
   {
-    headline: "We Don't Build Apps. We Build Operating Environments.",
-    tagline: "Cohesive, modular, and entirely under your control."
+    headline: "Innovation That Doesn't Apologize",
+    tagline: "Neither should you."
   },
   {
-    headline: "The AI Infrastructure the Industry Forgot to Build",
-    tagline: "Local-first. Open-source. Actually deployable."
+    headline: "Bold Enough to Build It. Sharp Enough to Ship It.",
+    tagline: "And weird enough to enjoy it."
+  },
+  {
+    headline: "Your Back Office Just Grew a Brain",
+    tagline: "A fabulous one."
+  },
+  {
+    headline: "From Back-of-the-Napkin to Battle-Tested",
+    tagline: "We build what others brainstorm."
+  },
+  {
+    headline: "Make Your Competitors Look Like They're on Dial-Up",
+    tagline: "Even if they aren't."
+  },
+  {
+    headline: "The Infrastructure of Imagination",
+    tagline: "Fantasy? Nah. Just really good engineering."
+  },
+  {
+    headline: "Tools So Good, You'll Think They're Cheating",
+    tagline: "They're not. Probably."
+  },
+  {
+    headline: "Because Boring Software is a Crime",
+    tagline: "We've alerted the authorities."
+  },
+  {
+    headline: "Digital Power Suits for Creative Assassins",
+    tagline: "Look sharp. Move fast."
+  },
+  {
+    headline: "Enterprise-Grade. Street-Tested. Unicorn-Approved.",
+    tagline: "Charleston built. Global bound."
+  },
+  {
+    headline: "Crafted with Precision. Deployed with Panache.",
+    tagline: "The devil's in the Dockerfile."
+  },
+  {
+    headline: "Helping You Outwork the Competition Without Breaking a Sweat",
+    tagline: "Your AI hustle, with ergonomic flair."
+  },
+  {
+    headline: "Where Mission Control Meets Unicorn Magic",
+    tagline: "Houston, we have liftoff… and glitter."
+  },
+  {
+    headline: "Don't Just Scale — Swagger While You Do It",
+    tagline: "Elastic. Electric. Elegant."
+  },
+  {
+    headline: "Work Smarter. Launch Faster. Command Everything.",
+    tagline: "Unicorn Commander at your service."
   }
 ];
 

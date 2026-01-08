@@ -66,6 +66,9 @@ export default function Navbar() {
           <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''} aria-label="Portfolio">
             Portfolio
           </Link>
+          <Link to="/blog" className={location.pathname.startsWith('/blog') ? 'active' : ''} aria-label="Research & Lab Notes">
+            Research
+          </Link>
           <Link to="/book" className={`nav-cta ${location.pathname === '/book' ? 'active' : ''}`} aria-label="Book Consultation">
             Book
           </Link>
