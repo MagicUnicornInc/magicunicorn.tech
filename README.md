@@ -1,69 +1,104 @@
 # 🦄 Magic Unicorn Tech Website
 
-> **Where Tech Meets Magic** - A modern, animated React website template with personality and pizzazz
+> **A Technology Studio That Builds Systems, Not Products**
 
 ![Magic Unicorn Tech Website](./public/magicunicorn.tech.jpeg)
 
 ## 🚀 Overview
 
-Magic Unicorn Tech is a cutting-edge website built with React and Vite that showcases how enterprise-grade technology can be wrapped in an irresponsibly cool package. This isn't your typical corporate website - it's a digital experience that combines serious functionality with magical aesthetics.
+Magic Unicorn Tech is the official website for **Magic Unicorn Unconventional Technology & Stuff Inc** — a technology studio building AI infrastructure, platforms, and accelerator ventures. This site showcases our ecosystem of platforms, technical accelerator program, and consulting services.
 
 ### ✨ What Makes This Special
 
 - **🎭 Dynamic Cycling Headlines**: 25 witty headline/tagline pairs that rotate randomly on each page visit
-- **🎨 Glassmorphic Design**: Modern frosted glass effects with purple gradients and glowing elements
+- **🏢 Technology Studio Identity**: Showcases platforms, accelerator ventures, and consulting services
+- **🎨 Glassmorphic Design**: Modern frosted glass effects with purple/blue gradients and glowing elements
+- **📅 Integrated Booking System**: Microsoft 365 calendar integration for scheduling consultations
 - **⚡ Blazing Fast Performance**: Built with Vite for lightning-fast development and production builds
 - **📱 Fully Responsive**: Looks stunning on everything from phones to ultrawide monitors
 - **🎬 Smooth Animations**: Framer Motion powers elegant transitions and micro-interactions
-- **🌟 Particle Effects**: Animated sparkles and background elements that bring the site to life
+
+## 🏗️ Site Architecture
+
+### Pages
+
+| Page | Route | Description |
+|------|-------|-------------|
+| **Home** | `/` | Studio overview with rotating headlines, platform previews, engagement modes |
+| **Studio** | `/about` | Philosophy, open-source stance, founder bio (Aaron Stransky) |
+| **Platforms** | `/platforms` | Unicorn Commander, Center Deep, Cognitive Companion showcase |
+| **Accelerator** | `/accelerator` | Technical accelerator program with portfolio companies |
+| **Consulting** | `/consulting` | Services, engagement models, differentiators |
+| **Portfolio** | `/portfolio` | Showcase of completed projects and work |
+| **Research** | `/blog` | Lab notes, research, and technical writing |
+| **Internships** | `/internships` | Talent pipeline and internship program |
+| **Book** | `/book` | Calendar-integrated consultation booking |
+
+### Platform Ecosystem
+
+- **🖥️ Unicorn Commander** - AI Infrastructure Command Center ([unicorncommander.com](https://unicorncommander.com))
+- **🧠 Center Deep** - Intelligence Layer for search, RAG, and analytics
+- **👤 Cognitive Companion** - Personal AI Interface ([cognitivecompanion.dev](https://cognitivecompanion.dev))
+
+### Technical Accelerator Portfolio
+
+- **Cipher Forge Forward** (Ryan Cabading) - Secure Systems & Applied AI
+- **Genesis Flow Labs** (Shafen Khan) - Automation & Workflow Intelligence
 
 ## 🛠️ Tech Stack
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
 | **React** | Frontend Framework | ^18.2.0 |
-| **Vite** | Build Tool & Dev Server | ^4.2.0 |
+| **Vite** | Build Tool & Dev Server | ^4.5.5 |
 | **Framer Motion** | Animation Library | ^10.12.16 |
 | **React Router** | Client-side Routing | ^6.14.2 |
 | **React Icons** | Icon Components | ^4.10.1 |
-| **Swiper** | Touch Sliders | ^10.2.0 |
+| **Express** | Booking API Server | ^4.18.0 |
+| **Microsoft Graph** | Calendar Integration | ^3.0.0 |
 
-## 🎯 Key Features
+## 📐 Component Architecture
 
-### 🎲 Random Headline System
-Every page refresh delivers a fresh, witty combination:
-- **"Like Skunkworks — But With Pizzazz"** / *"R&D, but make it sparkle."*
-- **"Digital Power Suits for Creative Assassins"** / *"Look sharp. Move fast."*
-- **"Because Boring Software is a Crime"** / *"We've alerted the authorities."*
-
-### 🎨 Visual Excellence
-- **Purple & Gold Theme**: Sophisticated color palette with magical accents
-- **Animated Sparkles**: Floating particles that respond to user interactions
-- **Glowing Effects**: CSS-based glow effects on key elements
-- **Smooth Transitions**: Every interaction feels buttery smooth
-
-### 📐 Component Architecture
 ```
 src/
 ├── components/
-│   ├── Hero.jsx           # Main landing hero section
-│   ├── Navbar.jsx         # Responsive navigation
-│   ├── ServiceOptions.jsx # Service showcase grid
-│   ├── Footer.jsx         # Site footer
-│   └── LazyImage.jsx      # Optimized image loading
+│   ├── Navbar.jsx            # Responsive navigation
+│   ├── Footer.jsx            # Site footer
+│   ├── PageHeader.jsx        # Reusable page headers
+│   ├── BackgroundSparkles.jsx # Animated particle effects
+│   ├── TimeSlotPicker.jsx    # Calendar booking component
+│   ├── ErrorBoundary.jsx     # Error handling
+│   └── LazyImage.jsx         # Optimized image loading
 ├── pages/
-│   ├── Home.jsx           # Homepage with cycling headlines
-│   ├── About.jsx          # Company information
-│   ├── Services.jsx       # Service offerings
-│   └── Contact.jsx        # Contact form
-└── styles/
-    └── *.css              # Component-specific styling
+│   ├── Home.jsx              # Homepage with studio narrative
+│   ├── About.jsx             # About the Studio
+│   ├── Platforms.jsx         # Platform ecosystem
+│   ├── Accelerator.jsx       # Technical accelerator
+│   ├── Consulting.jsx        # Consulting services
+│   ├── Portfolio.jsx         # Work showcase
+│   ├── Internships.jsx       # Internship program
+│   ├── Blog.jsx              # Research & lab notes
+│   ├── BlogSeries.jsx        # Blog series pages
+│   ├── BlogArticle.jsx       # Individual articles
+│   ├── Book.jsx              # Consultation booking
+│   └── Contact.jsx           # Contact form
+├── styles/
+│   ├── index.css             # Global styles & CSS variables
+│   ├── Home.css              # Homepage styles
+│   ├── About.css             # Studio page styles
+│   ├── Platforms.css         # Platforms page styles
+│   ├── Accelerator.css       # Accelerator page styles
+│   ├── Consulting.css        # Consulting page styles
+│   ├── Internships.css       # Internships page styles
+│   └── Book.css              # Booking page styles
+└── images/
+    └── index.js              # Image exports
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 16+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -89,89 +124,74 @@ npm run build
 
 ## 🐳 Docker Deployment
 
-### Prerequisites
-- Docker
-- Docker Compose
+### Services
 
-### Deploy with Single Command
-```bash
-# Make deploy script executable
-chmod +x scripts/deploy.sh
+The application consists of two services:
+1. **web** - Frontend React application served via nginx
+2. **booking-api** - Express.js server for Microsoft 365 calendar integration
 
-# Run deployment
-./scripts/deploy.sh
+### Environment Variables
+
+Create a `.env` file with the following:
+
+```env
+# Microsoft 365 Calendar Integration
+MS365_CLIENT_ID=your_client_id
+MS365_TENANT_ID=your_tenant_id
+MS365_CLIENT_SECRET=your_client_secret
+MS365_USER_EMAIL=your_calendar_email
+
+# Cloudflare Turnstile (spam protection)
+TURNSTILE_SECRET_KEY=your_turnstile_secret
 ```
 
-Or manually with Docker Compose:
+### Deploy with Docker Compose
+
 ```bash
-docker-compose up --build -d
+# Build and start services
+docker compose up --build -d
+
+# View logs
+docker compose logs -f
+
+# Stop services
+docker compose down
 ```
 
 The site will be available at http://localhost:3000
 
-### Stop the Application
-```bash
-docker-compose down
-```
+### Production Deployment
 
-### View Logs
-```bash
-docker-compose logs -f
-```
+The site is deployed via Traefik reverse proxy with automatic SSL:
+- **Production URL**: https://magicunicorn.tech
+- **Traefik Integration**: Automatic HTTPS via Let's Encrypt
 
-## 🎨 Customization Guide
+## 🎨 Design System
 
-### Updating Headlines
-Edit the `headlinePairs` array in `/src/pages/Home.jsx`:
-
-```javascript
-const headlinePairs = [
-  {
-    headline: "Your Awesome Headline",
-    tagline: "Your witty tagline here."
-  },
-  // Add more pairs...
-];
-```
-
-### Theming
-Primary colors and effects are defined in CSS custom properties:
+### Color Palette
 
 ```css
 :root {
-  --primary-purple: #b66eff;
-  --accent-gold: #ffd700;
-  --glow-color: rgba(182, 110, 255, 0.6);
+  --unicorn-purple: #b66eff;
+  --unicorn-blue: #00d4ff;
+  --unicorn-pink: #ff6b9d;
+  --dark-bg: #0a0a0f;
+  --dark-surface: #12121a;
+  --gradient-magic: linear-gradient(135deg, #b66eff 0%, #00d4ff 100%);
 }
 ```
 
-### Animation Timing
-Framer Motion animations can be customized in component files:
+### Typography
 
-```javascript
-// Example: Adjust hero animation timing
-transition={{ delay: 0.3, duration: 0.8 }}
-```
+- **Headings**: Inter, system-ui (bold weights)
+- **Body**: Inter, system-ui (regular/medium)
+- **Code**: Monaco, monospace
 
-## 🏗️ Architecture Highlights
+### Components
 
-### Performance Optimizations
-- **Lazy Loading**: Components load only when needed
-- **Code Splitting**: Automatic route-based splitting
-- **Image Optimization**: Responsive images with lazy loading
-- **Bundle Analysis**: Optimized build sizes
-
-### Accessibility Features
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-- **ARIA Labels**: Screen reader friendly
-- **Keyboard Navigation**: Full keyboard accessibility
-- **Color Contrast**: WCAG AA compliant color combinations
-
-### SEO Ready
-- **Meta Tags**: Open Graph and Twitter Card support
-- **Structured Data**: JSON-LD schema markup
-- **Sitemap Generation**: Automatic sitemap creation
-- **Analytics**: Umami Analytics integration (privacy-focused, GDPR-compliant)
+- **Cards**: Glassmorphic with subtle borders and hover effects
+- **Buttons**: Primary (gradient fill), Secondary (outline), CTA variants
+- **Animations**: Framer Motion for smooth page transitions and micro-interactions
 
 ## 📊 Analytics
 
@@ -181,44 +201,41 @@ This website uses [Umami Analytics](https://umami.is) for privacy-friendly, GDPR
 - **Privacy**: No cookies, anonymous tracking, self-hosted
 - **Implementation**: Tracking script integrated in main HTML file
 
-The Umami tracking script provides real-time insights while respecting visitor privacy and complying with GDPR regulations.
+## 📜 Documentation
 
-## 📊 Performance Metrics
+Additional documentation available in `/docs`:
 
-- **Lighthouse Score**: 95+ across all categories
-- **First Contentful Paint**: < 1.2s
-- **Largest Contentful Paint**: < 2.5s
-- **Bundle Size**: < 400KB gzipped
-
-## 🎭 Brand Personality
-
-This website embodies the **"Serious Tech in an Irresponsibly Cool Wrapper"** philosophy:
-
-- **Professional** enough for enterprise clients
-- **Playful** enough to stand out from boring corporate sites
-- **Technically excellent** under the hood
-- **Visually stunning** on the surface
-
-## 🤝 Contributing
-
-This template is designed to be:
-- **Forkable**: Easy to customize for your own brand
-- **Extensible**: Clean architecture for adding features
-- **Maintainable**: Well-organized code structure
-
-## 📜 License
-
-Open source - feel free to use this template for your own magical projects!
+- `company-profile.md` - Full company profile and positioning
+- `founder-profile.md` - Aaron Stransky bio and background
+- `site-architecture.md` - Detailed sitemap and implementation notes
+- `content-strategy.md` - Copy recommendations and brand voice
+- `design-system-enhancements.md` - Extended CSS variables and components
+- `research-findings.md` - Best practices from industry research
 
 ## 🏢 About Magic Unicorn Unconventional Technology & Stuff Inc
 
-We're the company that puts the "magic" in technology. Based in Charleston, we build tools so good you'll think they're cheating (they're not. Probably.).
+Magic Unicorn is a technology studio that builds AI platforms, automation systems, and production infrastructure that organizations can actually own. Not rent. Not license. **Own.**
 
-**Contact**: aaron@magicunicorn.tech
-**Website**: https://magicunicorn.tech
+### Core Philosophy
+
+- **Systems-of-Systems Thinking** - Ecosystems, not apps
+- **Open-Source First** - Transparency, modifiability, community leverage
+- **Hardware-Aware AI** - Design around real compute constraints
+- **Operator Experience as Product** - Tools that make operators confident
+
+### Contact
+
+- **Website**: https://magicunicorn.tech
+- **Email**: aaron@magicunicorn.tech
+- **LinkedIn**: [Aaron Stransky](https://www.linkedin.com/in/aaronstransky/)
+
+## 📦 Repositories
+
+- **GitHub**: https://github.com/MagicUnicornInc/magicunicorn.tech
+- **Forgejo**: https://git.unicorncommander.ai/MagicUnicorn/magicunicorn.tech
 
 ---
 
 *Built with ❤️ and a healthy dose of whimsy by Magic Unicorn Unconventional Technology & Stuff Inc*
 
-**"Don't Just Scale — Swagger While You Do It"** ✨
+**"Serious Systems. Approachable Wrapper."** ✨
