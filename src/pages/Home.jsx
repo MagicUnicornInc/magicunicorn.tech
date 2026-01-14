@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  FaServer, FaBrain, FaUser, FaRocket, FaCogs, FaHandshake,
+  FaServer, FaRocket, FaHandshake,
   FaArrowRight, FaCode, FaShieldAlt, FaChartLine, FaGlobe,
   FaLightbulb, FaLayerGroup
 } from 'react-icons/fa';
-import { UnicornLogo } from '../images';
+import { UnicornLogo, UnicornCommanderLogo, CenterDeepLogo, CognitiveCompanionLogo } from '../images';
 import BackgroundSparkles from '../components/BackgroundSparkles';
 import '../styles/Home.css';
 
@@ -168,7 +168,7 @@ const engagementModes = [
 const platforms = [
   {
     id: 'unicorn-commander',
-    icon: <FaServer />,
+    logo: UnicornCommanderLogo,
     name: 'Unicorn Commander',
     tagline: 'AI Infrastructure Command Center',
     description: 'The flagship platform for running AI like an operator. Local-first, modular, privacy-respecting — a complete operating environment for AI workloads.',
@@ -178,7 +178,7 @@ const platforms = [
   },
   {
     id: 'center-deep',
-    icon: <FaBrain />,
+    logo: CenterDeepLogo,
     name: 'Center Deep',
     tagline: 'Intelligence Layer',
     description: 'Search, RAG, analytics, and lead intelligence as infrastructure. The knowledge operations backbone for platforms and products.',
@@ -188,7 +188,7 @@ const platforms = [
   },
   {
     id: 'cognitive-companion',
-    icon: <FaUser />,
+    logo: CognitiveCompanionLogo,
     name: 'Cognitive Companion',
     tagline: 'Personal AI Interface',
     description: 'User-facing AI for professionals and creators. Desktop and mobile applications that bring AI capability to the edge.',
@@ -314,7 +314,7 @@ export default function Home() {
                 transition={{ delay: index * 0.15 }}
                 whileHover={{ y: -10 }}
               >
-                <div className="platform-preview-icon">{platform.icon}</div>
+                <img src={platform.logo} alt={`${platform.name} logo`} className="platform-preview-logo" />
                 <h3>{platform.name}</h3>
                 <p className="platform-preview-tagline">{platform.tagline}</p>
                 <p className="platform-preview-desc">{platform.description}</p>

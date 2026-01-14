@@ -162,6 +162,21 @@
   margin-bottom: 1.5rem;
 }
 
+.platform-preview-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.platform-preview-card:hover .platform-preview-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 20px color-mix(in srgb, var(--platform-color) 40%, transparent));
+}
+
 .platform-preview-card h3 {
   font-size: 1.5rem;
   color: var(--text-primary);

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,51 +18,29 @@ import Book from './pages/Book';
 // Legacy redirect
 import Services from './pages/Services';
 
-// Track page views with Google Analytics
-function usePageViews() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'page_view', {
-        page_path: location.pathname,
-      });
-    }
-  }, [location]);
-}
-
-// Wrapper component for page view tracking
-function AppWithPageViews() {
-  usePageViews();
-
-  return (
-    <ErrorBoundary>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/platforms" element={<Platforms />} />
-        <Route path="/accelerator" element={<Accelerator />} />
-        <Route path="/consulting" element={<Consulting />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/internships" element={<Internships />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/series/:seriesId" element={<BlogSeries />} />
-        <Route path="/blog/series/:seriesId/:articleSlug" element={<BlogArticle />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/book" element={<Book />} />
-        {/* Legacy redirect for old services URL */}
-        <Route path="/services" element={<Consulting />} />
-      </Routes>
-      <Footer />
-    </ErrorBoundary>
-  );
-}
-
 function App() {
   return (
-    <BrowserRouter>
-      <AppWithPageViews />
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ErrorBoundary>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/platforms" element={<Platforms />} />
+          <Route path="/accelerator" element={<Accelerator />} />
+          <Route path="/consulting" element={<Consulting />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/internships" element={<Internships />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/series/:seriesId" element={<BlogSeries />} />
+          <Route path="/blog/series/:seriesId/:articleSlug" element={<BlogArticle />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/book" element={<Book />} />
+          {/* Legacy redirect for old services URL */}
+          <Route path="/services" element={<Consulting />} />
+        </Routes>
+        <Footer />
+      </ErrorBoundary>
     </BrowserRouter>
   );
 }

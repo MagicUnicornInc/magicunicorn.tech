@@ -23,11 +23,13 @@ This document defines the component architecture for the MagicUnicorn.tech site 
 
 ### New Routing Structure
 ```jsx
-// App.jsx - Updated Routes
+// App.jsx - Current Routes (Jan 2025)
+// Note: Using React Router v7 future flags for smooth upgrade
+<BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
 <Routes>
   {/* Core Pages */}
   <Route path="/" element={<Home />} />
-  <Route path="/studio" element={<AboutStudio />} />
+  <Route path="/about" element={<About />} />
 
   {/* Platforms Ecosystem */}
   <Route path="/platforms" element={<Platforms />} />
@@ -864,8 +866,8 @@ export const glowPulse = {
 
 ```
 App.jsx
-├── BrowserRouter
-│   └── AppWithPageViews
+├── BrowserRouter (with v7 future flags)
+│   └── ErrorBoundary
 │       ├── Navbar (layout)
 │       ├── Routes
 │       │   ├── Home
@@ -982,3 +984,68 @@ const platformsMeta = {
 ---
 
 This architecture provides a comprehensive blueprint for transforming MagicUnicorn.tech from a generic tech services site into a sophisticated technology studio ecosystem hub while maintaining the existing design language and component patterns.
+
+---
+
+## 13. Image & Asset Architecture (Current - Jan 2025)
+
+### Platform Logos
+The Home page displays actual platform logos instead of generic icons:
+
+```
+src/images/
+├── index.js                      # Centralized exports
+├── unicorn.svg                   # Main Magic Unicorn logo (29KB)
+├── unicorn-commander-logo.webp   # The Colonel mascot (7KB)
+├── center-deep-logo.webp         # Astronaut unicorn (5KB)
+└── cognitive-companion-logo.webp # Unicorn Amanuensis (9KB)
+```
+
+### Image Optimization Pipeline
+```javascript
+// scripts/optimize-logos.js
+// Uses Sharp to:
+// 1. Resize to 200x200 (2x for retina at 100px display)
+// 2. Convert PNG → WebP at 85% quality
+// 3. Preserve transparency
+
+// Run: node scripts/optimize-logos.js
+```
+
+### Logo Sources
+Original high-res logos sourced from:
+- `/home/muut/Production/UC-Cloud/services/ops-center/public/logos/`
+- Platform websites (unicorncommander.com, etc.)
+
+### Adding New Platform Logos
+1. Copy source PNG to `src/images/{platform}-logo.png`
+2. Add to `scripts/optimize-logos.js` logos array
+3. Run optimization script
+4. Export from `src/images/index.js`
+5. Import in component and add to platforms array
+
+---
+
+## 14. Analytics Architecture (Current - Jan 2025)
+
+### Removed
+- Google Analytics (G-FJKYT7CV33)
+- Google Tag Manager integration
+- `usePageViews()` hook in App.jsx
+
+### Current Stack
+- **Umami** (self-hosted): `umami.unicorncommander.ai`
+  - Script loaded via `<script defer>` in index.html
+  - Website ID: `908167f7-2229-4084-99fd-fea4a867fb42`
+- **Cloudflare Web Analytics**: Injected via Cloudflare dashboard
+
+### Content Security Policy
+Configured in `docker/nginx.conf`:
+```
+script-src 'self' 'unsafe-inline' 'unsafe-eval'
+           https://umami.unicorncommander.ai
+           https://static.cloudflareinsights.com;
+connect-src 'self'
+            https://umami.unicorncommander.ai
+            https://static.cloudflareinsights.com;
+```

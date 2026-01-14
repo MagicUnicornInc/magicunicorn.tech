@@ -271,6 +271,48 @@ This is not a brochure site. It's an operating surface.
 
 ---
 
+## Platform Logos & Assets
+
+### Current Platform Logos (Home Page)
+Each platform in the ecosystem has a dedicated logo displayed on the Home page:
+
+| Platform | Logo File | Description |
+|----------|-----------|-------------|
+| Unicorn Commander | `unicorn-commander-logo.webp` | The Colonel - unicorn with military beret |
+| Center Deep | `center-deep-logo.webp` | Astronaut unicorn in space |
+| Cognitive Companion | `cognitive-companion-logo.webp` | Unicorn Amanuensis - circular badge with microphone |
+
+### Logo Specifications
+- **Format**: WebP (optimized from PNG)
+- **Display Size**: 100x100px on Home page
+- **File Size**: ~7KB each (optimized from ~500KB-1.8MB originals)
+- **Source Location**: `/home/muut/Production/UC-Cloud/services/ops-center/public/logos/`
+
+### Adding New Platform Logos
+1. Source the logo from the platform's website or repo
+2. Place PNG in `src/images/` as `{platform-slug}-logo.png`
+3. Run `node scripts/optimize-logos.js` to convert to WebP
+4. Add export to `src/images/index.js`
+5. Update `platforms` array in `src/pages/Home.jsx`
+
+---
+
+## Analytics
+
+### Current Setup (Jan 2025)
+- **Umami** (self-hosted): Primary analytics at `umami.unicorncommander.ai`
+- **Cloudflare Web Analytics**: Enabled via Cloudflare dashboard
+- **Google Analytics**: Removed (was G-FJKYT7CV33)
+
+### Privacy-First Approach
+The site uses only privacy-respecting analytics:
+- No cookies required
+- No cross-site tracking
+- GDPR/CCPA compliant by design
+- Data owned and controlled internally
+
+---
+
 ## Strategic Summary
 
 **You are building:**
